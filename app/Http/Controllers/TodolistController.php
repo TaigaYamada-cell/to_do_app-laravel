@@ -9,7 +9,13 @@ class TodolistController extends Controller
 {
     public function index(){
         $todos = Todo::All();
-        return view('todo_list', ["todos" => $todos]);
+
+        $total_time = 0;
+        foreach($todos as $todo){
+            $total_time += $todo->time;
+        }
+
+        return view('todo_list', ["todos" => $todos, "total_time" => $total_time]);
     }
 
     public function createPage(){

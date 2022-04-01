@@ -9,6 +9,7 @@
 <body>
     <h1>ToDO一覧</h1>
     <a href="/create-page">タスクを新規作成</a>
+    <p>合計所要時間：{{$total_time}}</p>
     @foreach($todos as $todo)
     <hr>
     <p>タイトル：{{ $todo->task_name }}</p>
